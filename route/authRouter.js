@@ -1,7 +1,6 @@
-const router=require("express").Router();
-const {login, logout}=require("../controller/authControllers");
+const route = require("express").Router();
+const authrouter = require("../controller/authControllers");
 
-router.get("/login", login);
-router.get("/logout",logout);
-
-module.exports=router;
+route.get("/login", authrouter.login);
+route.get("/logout", authrouter.logout);
+module.exports = route;

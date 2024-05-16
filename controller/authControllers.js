@@ -8,7 +8,7 @@ const loginschema = joi.object().keys({
 module.exports = {
   login: async (req, res) => {
     try {
-      const validate = await loginschema.validateAsync(req.query);
+      const validate = await loginschema.validateAsync(req.body);
       return res.send({
         message: "log in successfully",
         data: validate,
